@@ -1,0 +1,94 @@
+{
+  "builder_name": "parquet",
+  "citation": "",
+  "config_name": "sanitized",
+  "dataset_name": "mbpp",
+  "dataset_size": 219685,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/google-research-datasets/mbpp@4bb6404fdc6cacfda99d4ac4205087b89d32030c/sanitized/train-00000-of-00001.parquet": {
+      "num_bytes": 33854,
+      "checksum": null
+    },
+    "hf://datasets/google-research-datasets/mbpp@4bb6404fdc6cacfda99d4ac4205087b89d32030c/sanitized/test-00000-of-00001.parquet": {
+      "num_bytes": 60864,
+      "checksum": null
+    },
+    "hf://datasets/google-research-datasets/mbpp@4bb6404fdc6cacfda99d4ac4205087b89d32030c/sanitized/validation-00000-of-00001.parquet": {
+      "num_bytes": 13987,
+      "checksum": null
+    },
+    "hf://datasets/google-research-datasets/mbpp@4bb6404fdc6cacfda99d4ac4205087b89d32030c/sanitized/prompt-00000-of-00001.parquet": {
+      "num_bytes": 6717,
+      "checksum": null
+    }
+  },
+  "download_size": 115422,
+  "features": {
+    "source_file": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "task_id": {
+      "dtype": "int32",
+      "_type": "Value"
+    },
+    "prompt": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "code": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "test_imports": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "List"
+    },
+    "test_list": {
+      "feature": {
+        "dtype": "string",
+        "_type": "Value"
+      },
+      "_type": "List"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 335107,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 63468,
+      "num_examples": 120,
+      "dataset_name": "mbpp"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 132753,
+      "num_examples": 257,
+      "dataset_name": "mbpp"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 20056,
+      "num_examples": 43,
+      "dataset_name": "mbpp"
+    },
+    "prompt": {
+      "name": "prompt",
+      "num_bytes": 3408,
+      "num_examples": 7,
+      "dataset_name": "mbpp"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}

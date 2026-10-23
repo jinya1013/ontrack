@@ -1,0 +1,9 @@
+# Learn2PD baseline filter (evaluation only; weights imported from the
+# authors' release with scripts/import_learn2pd_checkpoint.py).
+model_path: GSAI-ML/LLaDA-8B-Instruct
+policy_type: learn2pd
+policy_input_type: confidence
+block_length: 32
+output_dir: outputs/learn2pd
+report_to: none
+bf16: false

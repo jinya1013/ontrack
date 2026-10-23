@@ -1,0 +1,45 @@
+# Ablation: confidence-only policy (top-1 confidence).
+model_path: GSAI-ML/LLaDA-8B-Instruct
+training_math_protocol: common-math-v1
+math_training_invalid_gold: exclude
+max_prompt_length: 256
+block_length: 32
+temperature: 0.0
+g_trace_teacher_data: data/teachers/llada/student_rejoin_correct
+g_trace_feature_kv_cache: no_cache
+
+# Policy architecture
+policy_type: dit_confidence
+policy_input_type: confidence
+policy_hidden_residual: false
+policy_hidden_dim: 128
+policy_feedforward_dim: 512
+policy_num_heads: 2
+policy_num_blocks: 1
+policy_dropout: 0.0
+policy_time_embed_dim: 128
+policy_smart_init: -2.0
+
+# Optimization: one epoch over the teacher trajectories
+seed: 123
+output_dir: outputs/llada_conf
+run_name: llada_conf
+num_train_epochs: 1
+per_device_train_batch_size: 16
+generation_batch_size: 16  # denoiser batch for recomputing teacher-state features
+gradient_accumulation_steps: 1
+learning_rate: 3.0e-5
+lr_scheduler_type: cosine
+warmup_steps: 100
+adam_beta1: 0.9
+adam_beta2: 0.99
+weight_decay: 0.1
+max_grad_norm: 0.2
+loglikelihood_dtype: float32
+bf16: false
+fp16: false
+beta: 0.0
+logging_steps: 1
+save_strategy: epoch
+save_total_limit: 2
+report_to: none
